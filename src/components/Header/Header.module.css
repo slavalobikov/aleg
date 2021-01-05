@@ -1,0 +1,19 @@
+.dima {
+    color:red;
+}
+
+.shopIcons {
+    font-size: 28px;
+    color:#fafafa;
+    cursor: pointer;
+}
+
+.shopIcons:hover {
+    color:antiquewhite;
+}
+
+.header {
+    position: absolute;
+    right: 15px;
+}
+

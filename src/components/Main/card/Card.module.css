@@ -1,0 +1,54 @@
+.Card {
+    width: 300px;
+    border: solid #fafafa 1px;
+    background-color: #fff;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.imgc {
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    width: 250px;
+}
+
+.priceAndName {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.name {
+    color: blue;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.name:hover {
+    color:cadetblue;
+
+}
+.price {
+    margin-right: 5px;
+    cursor: default;
+
+}
+.price:hover {
+    color:darkgreen;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin:15px;
+}
+
+.desc {
+    display: flex;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
