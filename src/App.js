@@ -7,6 +7,8 @@ import 'antd/dist/antd.css';
 import HeaderComponent from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import {connect} from "react-redux";
+import MainMax from "./components/MainMax/MainMax";
+import MainMinx from "./components/MainMin/MainMinx";
 
 const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -32,19 +34,13 @@ class App extends React.Component {
                 <Menu.Item key="1" icon={<ShopOutlined />} >
                   <Link to={'/'}>Главная</Link>
                 </Menu.Item>
-                {/*<Menu.Item key="2" >
-                  Option 2
-                </Menu.Item>*/}
+
                 <SubMenu key="sub1"  title="Сортировка" icon={<ToolOutlined />}>
-                  <Menu.Item key="3">Сначала дорогие</Menu.Item>
-                  <Menu.Item key="4">Сначала дешевые</Menu.Item>
+                  <Menu.Item key="3">
+                    <Link to={'/max'}>Сначала дорогие</Link></Menu.Item>
+                  <Menu.Item key="4"><Link to={'/min'}>Сначала дешевые</Link></Menu.Item>
                 </SubMenu>
-{/*
-                <SubMenu key="sub2"  title="Team">
-                  <Menu.Item key="6">Team 1</Menu.Item>
-                  <Menu.Item key="8">Team 2</Menu.Item>
-                </SubMenu>
-*/}
+
                 <Menu.Item key="9" icon={<ShoppingCartOutlined />}>
                   Корзина
                 </Menu.Item>
@@ -62,7 +58,10 @@ class App extends React.Component {
 
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
 
-                <Route path={''}  render={() =>  <Main tools={this.props.tools} />} />
+                <Route exact path={'/'}  render={() =>  <Main tools={this.props.tools} />} />
+                <Route  path={'/max'}  render={() =>  <MainMax tools={this.props.tools} />} />
+                <Route  path={'/min'}  render={() =>  <MainMinx tools={this.props.tools} />} />
+
               </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>Ilya Makovich ©2020 Created by 'BNTU'</Footer>
