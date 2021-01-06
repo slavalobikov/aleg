@@ -2,7 +2,7 @@ import React from 'react';
 import Card from "./card/Card";
 import s from './Main.module.css'
 
-const Main = ({tools}) => {
+const Main = ({tools, AddSum}) => {
 
     return (
         <div>
@@ -19,6 +19,7 @@ const Main = ({tools}) => {
                           material={t.material}
                           edging={t.edging}
                           manufacturer={t.manufacturer}
+                          AddSum={AddSum}
                     />
 
             )}

@@ -2,11 +2,17 @@ import React, {useState} from 'react';
 import s from './Card.module.css';
 import { Button } from 'antd';
 import ModalDesc from "../../ModalDesc/ModalDesc";
+import {AddSum, AddSumThunk} from "../../../Redux/reducers/BasketReducer";
 
 
 const Card = (props) => {
 
     const [model, isModel] = useState(false);
+
+    const buy = (price) => {
+
+        props.AddSum(price);
+    }
 
 
     return (
@@ -24,7 +30,7 @@ const Card = (props) => {
                     <Button onClick={() => {isModel(true)}} type="default" size={'large'}>
                         Подробнее
                     </Button>
-                    <Button type="primary" size={'large'}>
+                    <Button onClick={() => buy(props.price)} type="primary" size={'large'}>
                         Купить
                     </Button>
                 </div>

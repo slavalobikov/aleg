@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout, Menu} from 'antd';
-import {Link, Route} from "react-router-dom";
+import {Link, Route, withRouter} from "react-router-dom";
 import {ShoppingCartOutlined, ShopOutlined, ToolOutlined} from '@ant-design/icons'
 
 import 'antd/dist/antd.css';
@@ -9,6 +9,9 @@ import Main from "./components/Main/Main";
 import {connect} from "react-redux";
 import MainMax from "./components/MainMax/MainMax";
 import MainMinx from "./components/MainMin/MainMinx";
+import Basket from "./components/ Basket/ Basket";
+import {compose} from "redux";
+import {AddSum} from "./Redux/reducers/BasketReducer";
 
 const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -19,12 +22,12 @@ class App extends React.Component {
   };
 
   onCollapse = collapsed => {
-    console.log(collapsed);
     this.setState({ collapsed });
   };
 
   render() {
     const { collapsed } = this.state;
+    console.log('th', this.props)
     return (
 
         <Layout  style={{ minHeight: '100vh' }}>
@@ -42,7 +45,7 @@ class App extends React.Component {
                 </SubMenu>
 
                 <Menu.Item key="9" icon={<ShoppingCartOutlined />}>
-                  Корзина
+                  <Link to={'/basket'}>Корзина</Link>
                 </Menu.Item>
               </Menu>
 
@@ -58,9 +61,10 @@ class App extends React.Component {
 
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
 
-                <Route exact path={'/'}  render={() =>  <Main tools={this.props.tools} />} />
+                <Route exact path={'/'}  render={() =>  <Main tools={this.props.tools} AddSum={AddSum} />} />
                 <Route  path={'/max'}  render={() =>  <MainMax tools={this.props.tools} />} />
                 <Route  path={'/min'}  render={() =>  <MainMinx tools={this.props.tools} />} />
+                <Route  path={'/basket'}  render={() => <Basket />} />
 
               </div>
             </Content>
@@ -77,5 +81,9 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, {})(App);
+export default compose(
+    connect(mapStateToProps, {AddSum}),
+    withRouter,
+
+)(App) ;
 

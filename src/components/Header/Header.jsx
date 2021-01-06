@@ -3,18 +3,19 @@ import s from './Header.module.css'
 import {Header} from "antd/lib/layout/layout";
 
 import {ShoppingCartOutlined} from '@ant-design/icons'
-
-
+import {Link} from "react-router-dom";
 
 
 const HeaderComponent = () => {
     return (
-        <Header className={"site-layout-background"} style={{ padding: 0 }} >
-            <span className={s.header}>
+        <Header className={"site-layout-background"} style={{padding: 0}}>
+            {window.screen.availWidth <= 450 && <span className={s.header}>
                 <a href="tel:+375293061150">+375293061150</a>
-            <ShoppingCartOutlined className={s.shopIcons} />
-            <span className={s.shopIcons}>143 $</span>
-            </span>
+                <Link to={'/basket'}>
+                    <ShoppingCartOutlined className={s.shopIcons}/>
+                    <span className={s.shopIcons}>143 $</span>
+                </Link>
+            </span>}
 
         </Header>
     );
