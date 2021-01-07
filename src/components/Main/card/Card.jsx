@@ -3,7 +3,7 @@ import s from './Card.module.css';
 import { Button } from 'antd';
 import ModalDesc from "../../ModalDesc/ModalDesc";
 import {connect} from "react-redux";
-import {AddSum} from "../../../Redux/reducers/BasketReducer";
+import {AddProduct, AddSum} from "../../../Redux/reducers/BasketReducer";
 import InfoByBuy from "../../InfoByBuy/InfoByBuy";
 import NumberBuy from "../../NumberBuy/NumberBuy";
 
@@ -15,7 +15,8 @@ const Card = (props) => {
     const [number, isNumber] = useState(false);
 
     const buy = (price) => {
-        props.AddSum(price)
+        props.AddSum(price);
+        props.AddProduct({id:props.id, name:props.name, price:props.price, img:props.img})
         isInfo(true)
     }
 
@@ -62,4 +63,6 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, {AddSum})(Card);
+export default connect(mapStateToProps,
+    {AddSum,
+    AddProduct})(Card);

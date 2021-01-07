@@ -16,6 +16,7 @@ const Main = ({tools, AddSum}) => {
                     <Card name={t.name} price={t.price} key={t.id} desc={t.desc} img={t.img}
                           height={t.hight}
                           width={t.width}
+                          id={t.id}
                           strings={t.strings}
                           material={t.material}
                           edging={t.edging}

@@ -7,11 +7,11 @@ import InfoByBuy from "../InfoByBuy/InfoByBuy";
 const ModalDesc = (props) => {
 
     const [info, isInfo] = useState(false)
-console.log(props)
     const buy = (price) => {
         props.AddSum(price)
         isInfo(true)
         props.isModel(false)
+        props.AddProduct({id:props.id, name:props.name, price:props.price, img:props.img})
     }
 
     return (
