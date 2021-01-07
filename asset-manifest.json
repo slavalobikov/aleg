@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/aleg/static/css/main.fd4ce6c2.chunk.css",
-    "main.js": "/aleg/static/js/main.632be0b3.chunk.js",
-    "main.js.map": "/aleg/static/js/main.632be0b3.chunk.js.map",
+    "main.css": "/aleg/static/css/main.9dfa417c.chunk.css",
+    "main.js": "/aleg/static/js/main.11d8c9d1.chunk.js",
+    "main.js.map": "/aleg/static/js/main.11d8c9d1.chunk.js.map",
     "runtime-main.js": "/aleg/static/js/runtime-main.b516c8dd.js",
     "runtime-main.js.map": "/aleg/static/js/runtime-main.b516c8dd.js.map",
     "static/css/2.cc6972a9.chunk.css": "/aleg/static/css/2.cc6972a9.chunk.css",
-    "static/js/2.6b55aec6.chunk.js": "/aleg/static/js/2.6b55aec6.chunk.js",
-    "static/js/2.6b55aec6.chunk.js.map": "/aleg/static/js/2.6b55aec6.chunk.js.map",
+    "static/js/2.b763648a.chunk.js": "/aleg/static/js/2.b763648a.chunk.js",
+    "static/js/2.b763648a.chunk.js.map": "/aleg/static/js/2.b763648a.chunk.js.map",
     "index.html": "/aleg/index.html",
     "static/css/2.cc6972a9.chunk.css.map": "/aleg/static/css/2.cc6972a9.chunk.css.map",
-    "static/css/main.fd4ce6c2.chunk.css.map": "/aleg/static/css/main.fd4ce6c2.chunk.css.map",
-    "static/js/2.6b55aec6.chunk.js.LICENSE.txt": "/aleg/static/js/2.6b55aec6.chunk.js.LICENSE.txt"
+    "static/css/main.9dfa417c.chunk.css.map": "/aleg/static/css/main.9dfa417c.chunk.css.map",
+    "static/js/2.b763648a.chunk.js.LICENSE.txt": "/aleg/static/js/2.b763648a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b516c8dd.js",
     "static/css/2.cc6972a9.chunk.css",
-    "static/js/2.6b55aec6.chunk.js",
-    "static/css/main.fd4ce6c2.chunk.css",
-    "static/js/main.632be0b3.chunk.js"
+    "static/js/2.b763648a.chunk.js",
+    "static/css/main.9dfa417c.chunk.css",
+    "static/js/main.11d8c9d1.chunk.js"
   ]
 }
