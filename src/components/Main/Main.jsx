@@ -10,6 +10,7 @@ const Main = ({tools, AddSum}) => {
                 <Card name={'Под заказ'} price={'???'}
                       desc={'Балалайка является русским народным струнным щипковым инструментом'}
                       img={'https://svgsilh.com/svg_v2/1363011.svg'}
+                      disabled={true}
                 />
                 {tools.map(t =>
                     <Card name={t.name} price={t.price} key={t.id} desc={t.desc} img={t.img}
@@ -19,7 +20,6 @@ const Main = ({tools, AddSum}) => {
                           material={t.material}
                           edging={t.edging}
                           manufacturer={t.manufacturer}
-                          AddSum={AddSum}
                     />
 
             )}

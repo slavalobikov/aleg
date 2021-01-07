@@ -14,7 +14,7 @@ const BasketReducer = (state = initialState, action) => {
             debugger
             return  {
                 ...state,
-                sumprice: action.sumprice
+                sumprice:[Number(state.sumprice) + Number(action.price)]
             }
 
         default:

@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 const Basket = ({sumprice}) => {
     return (
         <div>
-            Общая сумма покупок {sumprice} BLR
+            Общая сумма покупок {+sumprice} BLR
         </div>
     );
 };

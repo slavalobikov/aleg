@@ -11,7 +11,6 @@ import MainMax from "./components/MainMax/MainMax";
 import MainMinx from "./components/MainMin/MainMinx";
 import Basket from "./components/ Basket/ Basket";
 import {compose} from "redux";
-import {AddSum} from "./Redux/reducers/BasketReducer";
 
 const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -27,7 +26,6 @@ class App extends React.Component {
 
   render() {
     const { collapsed } = this.state;
-    console.log('th', this.props)
     return (
 
         <Layout  style={{ minHeight: '100vh' }}>
@@ -55,13 +53,13 @@ class App extends React.Component {
 
           <Layout className="site-layout">
 
-            <HeaderComponent />
+            <HeaderComponent sumprice={this.props.sumprice} />
 
             <Content style={{ margin: '0 16px' }}>
 
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
 
-                <Route exact path={'/'}  render={() =>  <Main tools={this.props.tools} AddSum={AddSum} />} />
+                <Route exact path={'/'}  render={() =>  <Main tools={this.props.tools}  />} />
                 <Route  path={'/max'}  render={() =>  <MainMax tools={this.props.tools} />} />
                 <Route  path={'/min'}  render={() =>  <MainMinx tools={this.props.tools} />} />
                 <Route  path={'/basket'}  render={() => <Basket />} />
@@ -78,11 +76,12 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     tools:state.DataReducer.tools,
+    sumprice: state.BasketReducer.sumprice
   }
 };
 
 export default compose(
-    connect(mapStateToProps, {AddSum}),
+    connect(mapStateToProps, {}),
     withRouter,
 
 )(App) ;

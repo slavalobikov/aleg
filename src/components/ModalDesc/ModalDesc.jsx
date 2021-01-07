@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom'
 import s from './ModalDesc.module.css'
 import {Button} from "antd";
+import InfoByBuy from "../InfoByBuy/InfoByBuy";
 
 const ModalDesc = (props) => {
+
+    const [info, isInfo] = useState(false)
+console.log(props)
+    const buy = (price) => {
+        props.AddSum(price)
+        isInfo(true)
+        props.isModel(false)
+    }
 
     return (
        <div className={s.modal}>
@@ -36,20 +45,12 @@ const ModalDesc = (props) => {
                                <span><b>Производитель:</b></span>
                                <span> {props.manufacturer} </span>
                            </div>
-                           {/*<div className={s.btns}>
-                               <Button onClick={() => {props.isModel(false)}} type="default" size={'large'}>
-                                   Вернуться к покупкам
-                               </Button>
-                               <Button type="primary" size={'large'}>
-                                   Купить
-                               </Button>
-                           </div>*/}
                            <div className={s.priceAndName}>
                                <div className={s.name}>{props.name}</div>
                                <div className={s.price}>{props.price} BLR</div>
                            </div>
                            <div className={s.butt}>
-                               <Button className={s.back} type="primary" size={'large'}>
+                               <Button onClick={() => {buy(props.price)}} className={s.back} type="primary" size={'large'}>
                                    Купить
                                </Button>
                            </div>
@@ -60,6 +61,7 @@ const ModalDesc = (props) => {
                            </div>
                        </div>
                    </div>
+                   {!!info &&  <InfoByBuy isInfo={isInfo} />}
                </div>,
                document.getElementById('portal')
            )}
