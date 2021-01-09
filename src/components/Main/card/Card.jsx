@@ -36,9 +36,12 @@ const Card = (props) => {
                     <Button onClick={() => {isModel(true)}} type="default" size={'large'}>
                         Подробнее
                     </Button>
-                        <Button onClick={() => buy(props.price) }  type="primary" size={'large'}>
+                    {!props.product.find(item => item.id === props.id) && <Button onClick={() => buy(props.price) }  type="primary" size={'large'}>
                         Купить
-                        </Button>
+                        </Button>}
+                        {!!props.product.find(item => item.id === props.id) && <Button onClick={() => buy(props.price) } disabled  type="primary" size={'large'}>
+                        Уже в корзине
+                        </Button>}
                     </>}
                     {!!props.disabled && window.screen.availWidth <= 450 && <a href="tel:+375293061150"><Button className={s.zakaz} type="primary" size={'large'}>
                         Заказать
@@ -60,6 +63,7 @@ const Card = (props) => {
 const mapStateToProps = (state) => {
     return {
         tools:state.DataReducer.tools,
+        product:state.BasketReducer.product,
     }
 };
 

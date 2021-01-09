@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './BasketElement.module.css'
 
-import {DeleteOutlined, } from '@ant-design/icons'
+import {DeleteOutlined, } from '@ant-design/icons';
 
 
 const BasketElement = (props) => {
