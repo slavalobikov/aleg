@@ -66,7 +66,7 @@ class App extends React.Component {
 
               </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Ilya Makovich ©2020 Created by 'BNTU'</Footer>
+            <Footer style={{ textAlign: 'center' }}>github:slavalobikov ©2020 Created by 'BNTU'</Footer>
           </Layout>
         </Layout>
     );

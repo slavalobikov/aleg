@@ -10,10 +10,10 @@ const HeaderComponent = (props) => {
     return (
         <Header className={"site-layout-background"} style={{padding: 0}}>
             {window.screen.availWidth >= 450 && <span className={s.header}>
-                <span className={s.shopIcons}>{props.sumprice} $</span>
+                <span className={s.shopIcons}>{props.sumprice} BLR</span>
             </span>}
             {window.screen.availWidth <= 450 && <span className={s.header}>
-                <a href="tel:+375293061150">+375293061150</a>
+                <a  href="tel:+375293061150">+375293061150</a>
                 <Link to={'/basket'}>
                     <ShoppingCartOutlined className={s.shopIcons}/>
                     <span className={s.shopIcons}>{props.sumprice} $</span>

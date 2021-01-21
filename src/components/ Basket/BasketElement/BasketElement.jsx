@@ -2,6 +2,7 @@ import React from 'react';
 import s from './BasketElement.module.css'
 
 import {DeleteOutlined, } from '@ant-design/icons';
+import {Button} from "antd";
 
 
 const BasketElement = (props) => {
@@ -27,6 +28,7 @@ const BasketElement = (props) => {
 
             </div>
             <hr/>
+
         </div>
     );
 };

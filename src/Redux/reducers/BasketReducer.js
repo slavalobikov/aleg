@@ -1,6 +1,6 @@
-const ADD_SUM = 'ADD_SUM';
-const ADD_PRODUCT = 'ADD_PRODUCT';
-const DELETE_PRODUCT = 'DELETE_PRODUCT';
+const ADD_SUM = 'basket/ADD_SUM';
+const ADD_PRODUCT = 'basket/ADD_PRODUCT';
+const DELETE_PRODUCT = 'basket/DELETE_PRODUCT';
 
 let initialState = {
     sumprice: 0,

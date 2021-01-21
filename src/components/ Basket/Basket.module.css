@@ -1,0 +1,10 @@
+.fl {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.btn {
+    margin:16px
+}

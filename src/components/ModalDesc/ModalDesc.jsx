@@ -50,9 +50,14 @@ const ModalDesc = (props) => {
                                <div className={s.price}>{props.price} BLR</div>
                            </div>
                            <div className={s.butt}>
-                               <Button onClick={() => {buy(props.price)}} className={s.back} type="primary" size={'large'}>
-                                   Купить
-                               </Button>
+                               {!props.disabled && <>
+                                   {!props.product.find(item => item.id === props.id) && <Button className={s.back} onClick={() => buy(props.price) }  type="primary" size={'large'}>
+                                       Купить
+                                   </Button>}
+                                   {!!props.product.find(item => item.id === props.id) && <Button className={s.back} onClick={() => buy(props.price) } disabled  type="primary" size={'large'}>
+                                       Уже в корзине
+                                   </Button>}
+                               </>}
                            </div>
                            <div className={s.butt}>
                                <Button className={s.back} onClick={() => {props.isModel(false)}} type="default" size={'large'}>
