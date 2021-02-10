@@ -12,16 +12,18 @@ const MainMax = ({tools}) => {
                   desc={'Балалайка является русским народным струнным щипковым инструментом'}
                   img={'https://svgsilh.com/svg_v2/1363011.svg'}
             />
-            {bal.sort((a, b) => b.price - a.price).map(t => <Card
-                name={t.name} price={t.price} key={t.id} desc={t.desc} img={t.img}
-                height={t.hight}
-                width={t.width}
-                strings={t.strings}
-                material={t.material}
-                edging={t.edging}
-                manufacturer={t.manufacturer}
+            {bal.sort((a, b) => b.price - a.price).map(t =>
+                <Card name={t.name} price={t.price} key={t.id} desc={t.desc} img={t.img}
+                      height={t.hight}
+                      width={t.width}
+                      id={t.id}
+                      strings={t.strings}
+                      material={t.material}
+                      edging={t.edging}
+                      manufacturer={t.manufacturer}
+                />
 
-            />)}
+            )}
         </div>
     );
 };

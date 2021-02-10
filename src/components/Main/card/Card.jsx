@@ -10,6 +10,11 @@ import NumberBuy from "../../NumberBuy/NumberBuy";
 
 const Card = (props) => {
 
+    //console.log('Продукты',props.product.find())
+
+    //props.product.find(item => item.id === props.id)
+
+
     const [model, isModel] = useState(false);
     const [info, isInfo] = useState(false);
     const [number, isNumber] = useState(false);
